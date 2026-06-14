@@ -119,7 +119,7 @@ with st.sidebar:
                     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
                     chunks = text_splitter.split_documents(pages)
                     
-                    embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004", google_api_key=api_key)
+                    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=api_key)
                     vector_store = FAISS.from_documents(chunks, embeddings)
                     st.session_state.vector_store = vector_store
                     
